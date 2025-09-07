@@ -52,7 +52,7 @@ class _QuoteListState extends State<QuoteList> {
       Column(
         // For each Quote in quotes make a QuoteCard widget
         // Also passes a callback: when user presses "like", update state
-        children: quotes.map<Widget>((q) => QuoteCard(quote: q, onLike: () => setState(() => q.likes++))).toList(),
+        children: quotes.map<Widget>((q) => QuoteCard(quote: q, onLike: () => setState(() => q.likes++), onDelete: () => setState(() => quotes.remove(q)))).toList(),
       ),
     );
   }
