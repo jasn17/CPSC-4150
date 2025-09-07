@@ -32,7 +32,13 @@ class _QuoteListState extends State<QuoteList> {
     Quote(
       author: 'John',
       text:
-      'Jesus answered, "I am the way and the truth and the life. No one comes to the Father except through me."',
+      'Jesus answered, "I am the way and the truth and the life. No one comes to the Father except through me.',
+      theme: 'Grace',
+    ),
+    Quote(
+      author: 'Isaiah',
+      text:
+      'But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not be weary; they will walk and not faint',
       theme: 'Grace',
     ),
   ];

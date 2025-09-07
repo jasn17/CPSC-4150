@@ -47,11 +47,44 @@ class QuoteCard extends StatelessWidget {
     );
   }
 
+  // Get card color based on theme
+  Color _getCardColor() {
+    switch (quote.theme) {
+      case 'Faith':
+        return Colors.purple[100]!; // light purple
+      case 'Wisdom':
+        return Colors.green[100]!; // light green
+      case 'Grace':
+        return Colors.yellow[100]!; // light yellow
+      case 'Strength':
+        return Colors.blue[100]!; // light blue
+      default:
+        return Colors.grey[100]!; // default light grey
+    }
+  }
+
+  // Get theme tag color based on theme
+  Color _getTagColor() {
+    switch (quote.theme) {
+      case 'Faith':
+        return Colors.purple[800]!; // dark purple
+      case 'Wisdom':
+        return Colors.green[800]!; // dark green
+      case 'Grace':
+        return Colors.yellow[800]!; // dark yellow
+      case 'Strength':
+        return Colors.blue[800]!; // dark blue
+      default:
+        return Colors.grey[800]!; // default dark grey
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final dateStr = DateFormat('MMM d, yyyy').format(quote.dateCreated);
     return Card(
-      margin: const EdgeInsets.fromLTRB(16, 16 , 16, 0),
+      margin: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+      color: _getCardColor(), // Apply theme-based color
       child: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(
@@ -64,13 +97,14 @@ class QuoteCard extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
-                    color: Colors.blue[100],
+                    color: _getCardColor(),
                     borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: _getTagColor().withOpacity(0.3)),
                   ),
                   child: Text(
                     quote.theme,
                     style: TextStyle(
-                      color: Colors.blue[800],
+                      color: _getTagColor(),
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                     ),
