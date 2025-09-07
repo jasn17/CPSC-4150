@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Simple animation utilities for the Bible Quotes app
-/// This file contains 4 beginner-friendly animation features that can be easily added to any widget
+/// Animnations that can be added to any widget in the future
 class AppAnimations {
 
   /// Makes widgets fade in smoothly when they first appear
@@ -84,7 +83,6 @@ class AppAnimations {
     );
   }
 
-  /// 4. BOUNCE ANIMATION
   /// Makes widgets bounce when tapped or when a condition changes
   /// Usage: AppAnimations.bounce(child: yourWidget, shouldBounce: someCondition)
   static Widget bounce({
@@ -109,7 +107,7 @@ enum SlideDirection {
   bottom,
 }
 
-/// 5. BONUS: STAGGERED LIST ANIMATION
+/* (!) Still needs work/improvement
 /// Makes a list of widgets appear one after another with a delay
 /// Usage: AppAnimations.staggeredList(children: [widget1, widget2, widget3])
 class StaggeredList extends StatelessWidget {
@@ -152,3 +150,4 @@ class StaggeredList extends StatelessWidget {
     );
   }
 }
+*/
