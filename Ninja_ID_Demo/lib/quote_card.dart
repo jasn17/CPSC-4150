@@ -90,7 +90,7 @@ class QuoteCard extends StatelessWidget {
               children: [
                 // Display date
                 Text(dateStr, style: TextStyle(color: Colors.grey[500])),
-                // Display thumbs up button and counter
+                // Display thumbs up button and counter *
                 Row(
                   children: [
                     IconButton(
