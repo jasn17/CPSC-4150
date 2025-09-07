@@ -20,7 +20,7 @@ class _QuoteListState extends State<QuoteList> {
   final List<Quote> quotes = [
     Quote(
       author: 'Romans',
-      text: 'For all have sinned and fall short of the glory of God',
+      text: 'For all have sinned and fall short of the glory of God (example commit)',
     ),
     Quote(
       author: 'Matthew',
