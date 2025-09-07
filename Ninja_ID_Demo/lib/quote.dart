@@ -7,6 +7,8 @@ class Quote {
   int likes;
   // This is for the date
   final DateTime dateCreated;
+  // This is for the theme the quote feels like
+  final String theme;
 
   Quote({
     required this.text,

@@ -20,17 +20,20 @@ class _QuoteListState extends State<QuoteList> {
   final List<Quote> quotes = [
     Quote(
       author: 'Romans',
-      text: 'For all have sinned and fall short of the glory of God (example commit)',
+      text: 'For all have sinned and fall short of the glory of God.',
+      theme: 'Faith',
     ),
     Quote(
       author: 'Matthew',
       text:
-      'Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit',
+      'Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit.',
+      theme: 'Wisdom',
     ),
     Quote(
       author: 'John',
       text:
-      'Jesus answered, "I am the way and the truth and the life. No one comes to the Father except through me"',
+      'Jesus answered, "I am the way and the truth and the life. No one comes to the Father except through me."',
+      theme: 'Grace',
     ),
   ];
 
