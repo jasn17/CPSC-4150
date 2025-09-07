@@ -17,6 +17,7 @@ class Quote {
     this.likes=0,
     // Date uses current time as default
     DateTime? dateCreated,
+    required this.theme,
   }): dateCreated = dateCreated ?? DateTime.now();
 }
 
