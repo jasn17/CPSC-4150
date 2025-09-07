@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'quote.dart';
 import 'package:intl/intl.dart';
+import 'animations.dart';
 
 // Reusable widget to display one quote preformatted
 class QuoteCard extends StatelessWidget {
@@ -127,14 +128,20 @@ class QuoteCard extends StatelessWidget {
                 // Display thumbs up button and counter *
                 Row(
                   children: [
-                    IconButton(
-                      icon: const Icon(Icons.thumb_up),
-                      // Call function given by parent
-                      onPressed: onLike,
+                    AppAnimations.bounce(
+                      shouldBounce: quote.likes > 0,
+                      child: IconButton(
+                        icon: const Icon(Icons.thumb_up),
+                        // Call function given by parent
+                        onPressed: onLike,
+                      ),
                     ),
                     Text('${quote.likes}'),
                     IconButton(
-                      icon: const Icon(Icons.delete),
+                      icon: Icon(
+                        Icons.delete,
+                        color: Colors.red[400],
+                      ),
                       onPressed: () => _showDeleteConfirmation(context),
                     )
                   ],

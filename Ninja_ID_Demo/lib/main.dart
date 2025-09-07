@@ -1,10 +1,28 @@
 import 'package:flutter/material.dart';
 import 'quote.dart';
 import 'quote_card.dart';
+import 'animations.dart';
 
 /// Starts the app by calling the QuoteList() app
 void main() => runApp(
-    const MaterialApp(home: QuoteList())
+    MaterialApp(
+      title: 'Bible Quotes',
+      theme: ThemeData(
+        primarySwatch: Colors.amber,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        cardTheme: const CardThemeData(
+          elevation: 4,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(12)),
+          ),
+        ),
+        appBarTheme: const AppBarTheme(
+          elevation: 2,
+          centerTitle: true,
+        ),
+      ),
+      home: const QuoteList(),
+    )
 );
 
 /// QuoteList creates and returns a page template
@@ -39,7 +57,7 @@ class _QuoteListState extends State<QuoteList> {
       author: 'Isaiah',
       text:
       'But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not be weary; they will walk and not faint',
-      theme: 'Grace',
+      theme: 'Strength',
     ),
   ];
 
@@ -49,16 +67,39 @@ class _QuoteListState extends State<QuoteList> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: const Text('Bible Quotes'),
+        title: AppAnimations.fadeIn(
+          child: const Text('Bible Quotes'),
+        ),
         centerTitle: true,
         backgroundColor: Colors.amberAccent,
       ),
       // Body of page, displaying card widgets
-      body:
-      Column(
-        // For each Quote in quotes make a QuoteCard widget
-        // Also passes a callback: when user presses "like", update state
-        children: quotes.map<Widget>((q) => QuoteCard(quote: q, onLike: () => setState(() => q.likes++), onDelete: () => setState(() => quotes.remove(q)))).toList(),
+      body: StaggeredList(
+        children: quotes.map<Widget>((q) => QuoteCard(
+          quote: q, 
+          onLike: () => setState(() => q.likes++), 
+          onDelete: () => setState(() => quotes.remove(q))
+        )).toList(),
+      ),
+      floatingActionButton: AppAnimations.bounce(
+        shouldBounce: true,
+        child: FloatingActionButton(
+          onPressed: () {
+            // Show a simple snackbar as placeholder for "add quote" functionality
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: const Text('Add new quote feature coming soon!'),
+                backgroundColor: Colors.amber[600],
+                behavior: SnackBarBehavior.floating,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+            );
+          },
+          child: const Icon(Icons.add),
+          tooltip: 'Add new quote',
+        ),
       ),
     );
   }
