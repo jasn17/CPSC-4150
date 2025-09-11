@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Animnations that can be added to any widget in the future
+/// Animations that can be added to any widget in the future
 class AppAnimations {
 
   /// Makes widgets fade in smoothly when they first appear
