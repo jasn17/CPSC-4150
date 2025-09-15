@@ -18,6 +18,7 @@ class _FaithPageState extends State<FaithPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Faith')),
+      // If there is no content to display, show a message.
       body: widget.quotes.isEmpty
           ? const Center(child: Text('No Faith quotes yet.'))
           : ListView.builder(

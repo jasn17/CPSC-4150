@@ -1,6 +1,3 @@
-// about.dart
-// A tiny, clear "About" page that explains the app purpose.
-
 import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {
@@ -13,7 +10,7 @@ class AboutPage extends StatelessWidget {
       body: const Padding(
         padding: EdgeInsets.all(16),
         child: Text(
-          'Bible Quotes is a simple study companion. '
+          'Bible Quotes by Jason L is a simple study companion. '
               'Browse short scripture-based quotes organized by theme '
               '(Strength, Wisdom, Faith, Grace). Tap the thumbs-up to like a quote. '
               'Liked quotes appear on the Favorites page so you can return to them quickly.',

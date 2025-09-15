@@ -18,6 +18,7 @@ class _GracePageState extends State<GracePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Grace')),
+      // If there is no content to display, show a message.
       body: widget.quotes.isEmpty
           ? const Center(child: Text('No Grace quotes yet.'))
           : ListView.builder(

@@ -18,6 +18,7 @@ class _StrengthPageState extends State<StrengthPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Strength')),
+      // If there is no content to display, show a message.
       body: widget.quotes.isEmpty
           ? const Center(child: Text('No Strength quotes yet.'))
           : ListView.builder(

@@ -1,7 +1,3 @@
-// animations.dart
-// Minimal helper used by QuoteCard. Keeps the idea of "bounce" simple.
-// When shouldBounce = true, we run a tiny scale-in animation (0.9 -> 1.0).
-
 import 'package:flutter/material.dart';
 
 class AppAnimations {

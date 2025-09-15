@@ -100,7 +100,7 @@ class QuoteCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: _getCardColor(),
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: _getTagColor().withOpacity(0.3)),
+                    border: Border.all(color: _getTagColor().withValues()),
                   ),
                   child: Text(
                     quote.theme,
